@@ -9,7 +9,15 @@
   --Login-heading-color: #EE252D; 
   --Login-heading-size:34px;  
   --Login-input-font-size:18px;
+  --Login-logo-font-size:350px;
 }
 .App {
   /* text-align: center; */
+}
+
+@media(max-width:400px){
+  :root {
+    /* Login-Root */
+    --Login-heading-size:28px;  
+  }
 }

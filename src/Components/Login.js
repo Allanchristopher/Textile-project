@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { LockOutlined, UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 import "./Login.css";
+
 function Login() {
   const [form] = Form.useForm();
   const [clientReady, setClientReady] = useState(false);
+
   useEffect(() => {
     setClientReady(true);
   }, []);
+
   const onFinish = (values) => {
     console.log("Finish:", values);
   };
+
   const customButtonStyle = {
     backgroundColor: "#F05658", // Set your custom color here
     borderColor: "#F05658", // Set the border color if needed
   };
+
   return (
     <div className="Login">
       <div className="Login-container">
@@ -43,10 +48,10 @@ function Login() {
                 { required: true, message: "Please input your password!" },
               ]}
             >
-              <Input
+              <Input.Password
                 prefix={<LockOutlined className="site-form-item-icon" />}
-                type="password"
                 placeholder="Password"
+                iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
               />
             </Form.Item>
             <Form.Item>
@@ -54,13 +59,11 @@ function Login() {
                 type="primary"
                 htmlType="submit"
                 style={customButtonStyle}
-                //   disabled={
-                //     !clientReady ||
-                //     !form.isFieldsTouched(true) ||
-                //     !!form
-                //       .getFieldsError()
-                //       .filter(({ errors }) => errors.length).length
-                //   }
+                // disabled={
+                //   !clientReady ||
+                //   !form.isFieldsTouched(true) ||
+                //   !!form.getFieldsError().filter(({ errors }) => errors.length).length
+                // }
               >
                 Log in
               </Button>

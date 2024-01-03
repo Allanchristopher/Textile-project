@@ -65,3 +65,30 @@
     background-color: #1890ff;
     border-color: #1890ff;
   }
+  @media(max-width:1000px){
+    .Login-container{
+      width: 90%;
+    }
+    .Logo-icon{
+      font-size: 150px;
+    }
+  }
+  @media(max-width:850px){
+    .Login-container{
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+    }
+    .Login-container-1{
+      width: 100%;
+    }
+    .Login-container-2{
+      text-align: center;
+    }
+  }
+  @media(max-width:600px){
+
+    .Login-container {
+      
+    }
+  }
