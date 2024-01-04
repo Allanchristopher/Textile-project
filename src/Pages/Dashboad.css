@@ -1,5 +1,7 @@
-.Dashboad {
+.Dashboard {
   width: 100%;
+  display: grid;
+  gap: 30px;
 }
 .Button-container {
   display: flex;

@@ -1,4 +1,99 @@
-.Dashboardtdy{
-    width: 100%;
-    height: 100%;
+.Dashboardtdy {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  display: grid;
+  gap: 20px;
+}
+.Dashboard-card-container {
+  /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 8px;
+}
+/* .Dashboard-card-container > *{
+flex-grow: 1;
+flex-basis: 50%;
+} */
+.Dashboard-card {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Dashboard-card:hover {
+  /* transform: scale(1.01); */
+  transition: transform 0.3s;
+  border: 0.5px solid var(--Sidebar-background-color);
+}
+.Dashboard-card-heading {
+  font-size: 20px;
+  font-weight: 500;
+  color: #888;
+}
+.Dashboard-card-value {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.Dashboard-card.sales-count-card {
+  position: relative;
+}
+
+.Dashboard-card.sales-count-card:hover .Dashboard-additional-box {
+  display: flex;
+}
+
+.Dashboard-additional-box {
+  padding: 30px;
+  display: none;
+  position: absolute;
+  top: 103%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.Dashboard-additional-box-heading{
+    font-size: 18px;
+    color: #888;
+}
+.Dashboard-additional-box-count{
+    font-size: 20px;
+}
+.chart-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+
+}
+.chart-container-same{
+  width: 100%;
+  height: 350px;
+  background-color: #fff;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.chart-container-1{
+
 }
