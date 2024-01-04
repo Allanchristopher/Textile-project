@@ -1,3 +1,25 @@
-.Dashboad{
-    width: 100%;
+.Dashboad {
+  width: 100%;
+}
+.Button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.Dashboard-Today-btn {
+  width: 100px;
+  height: 40px;
+  font-size: var(--Dashboard-btn-font-size) !important;
+}
+.Dashboard-Today-btn-active {
+  background-color: var(--Sidebar-background-color) !important;
+  border-color: var(--Sidebar-background-color) !important;
+  color: #fff !important;
+}
+
+.Dashboard-Today-btn-inactive {
+  background-color: #fff !important;
+  border-color: var(--Sidebar-background-color) !important;
+  color: #000 !important;
 }

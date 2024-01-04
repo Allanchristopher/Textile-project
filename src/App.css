@@ -17,8 +17,11 @@
   --Sidebar-link-hover-color:#c04446;
   --Sidebar-link-active-color:#903334;
   --Sidebarlogo-font-size:30px;
-  --Sidebar-bar-font-size:20px;
-  --Sidebar-link-icon-text-font-size:20px;
+  --Sidebar-bar-font-size:18px;
+  --Sidebar-link-icon-text-font-size:16px;
+
+    /* Sidebar-Root */
+    --Dashboard-btn-font-size:16px;
 
 
 
