@@ -10,9 +10,25 @@
   --Login-heading-size:34px;  
   --Login-input-font-size:18px;
   --Login-logo-font-size:350px;
+
+  /* Sidebar-Root */
+  --Sidebar-background-color: #f05658;
+  --Sidebar-text-color:#fff;
+  --Sidebar-link-hover-color:#c04446;
+  --Sidebar-link-active-color:#903334;
+  --Sidebarlogo-font-size:30px;
+  --Sidebar-bar-font-size:20px;
+  --Sidebar-link-icon-text-font-size:20px;
+
+
+
+
 }
+
+
 .App {
   /* text-align: center; */
+  overflow: hidden;
 }
 
 @media(max-width:400px){
