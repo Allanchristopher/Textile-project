@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Button } from "antd";
+import { Button, DatePicker } from "antd";
 import "./Dashboad.css";
 import Dashboardtdy from "./Dashboardtdy";
-
+const { RangePicker } = DatePicker;
 function Dashboard() {
   const [selectedTab, setSelectedTab] = useState("Today");
-
+  const [isHovered, setIsHovered] = useState(false);
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
   };
@@ -13,18 +13,38 @@ function Dashboard() {
   return (
     <div className="Dashboard">
       <div className="Button-container">
+        <div className="Dashboard-date-filters">
+          <Button
+            type={selectedTab === "Today" ? "primary" : "default"}
+            onClick={() => handleTabClick("Today")}
+            className={`Dashboard-Today-btn ${
+              selectedTab === "Today"
+                ? "Dashboard-Today-btn-active"
+                : "Dashboard-Today-btn-inactive"
+            }`}
+          >
+            Today
+          </Button>
+
+          <RangePicker />
+        </div>
+
+        <div className="Dashboard-bilinking-btn">
+
+
         <Button
-          type={selectedTab === "Today" ? "primary" : "default"}
-          onClick={() => handleTabClick("Today")}
-          className={`Dashboard-Today-btn ${
-            selectedTab === "Today"
-              ? "Dashboard-Today-btn-active"
-              : "Dashboard-Today-btn-inactive"
-          }`}
-        >
-          Today
-        </Button>
-        <Button
+      className={`blinking-button ${isHovered ? '' : 'blinking'}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      Stock alert
+    </Button>
+
+
+
+
+        </div>
+        {/* <Button
           type={selectedTab === "Overall" ? "primary" : "default"}
           onClick={() => handleTabClick("Overall")}
           className={`Dashboard-Today-btn ${
@@ -34,19 +54,16 @@ function Dashboard() {
           }`}
         >
           Overall
-        </Button>
+        </Button> */}
       </div>
       {selectedTab === "Today" && (
-        <div className="Today-content"><Dashboardtdy/></div>
+        <div className="Today-content">
+          <Dashboardtdy />
+        </div>
       )}
-      {selectedTab === "Overall" && (
+      {/* {selectedTab === "Overall" && (
         <div className="Overall-content">Overall Content</div>
-      )}
-
-
-
-
-
+      )} */}
     </div>
   );
 }

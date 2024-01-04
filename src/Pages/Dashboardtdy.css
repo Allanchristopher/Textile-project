@@ -72,6 +72,15 @@ flex-basis: 50%;
     font-size: 18px;
     color: #888;
 }
+.Dashboard-additional-box-heading:hover{
+    font-size: 18px;
+    color: #888;
+    /* background-color: var(--Sidebar-background-color);
+    padding-left: 2px;
+    padding-right: 2px; */
+    border-bottom: 3px solid var(--Sidebar-background-color);
+}
+
 .Dashboard-additional-box-count{
     font-size: 20px;
 }

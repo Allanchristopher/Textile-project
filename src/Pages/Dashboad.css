@@ -6,8 +6,12 @@
 .Button-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 30px;
+}
+.Dashboard-date-filters{
+display: flex;
+gap: 30px;
 }
 .Dashboard-Today-btn {
   width: 100px;
@@ -24,4 +28,39 @@
   background-color: #fff !important;
   border-color: var(--Sidebar-background-color) !important;
   color: #000 !important;
+}
+.Dashboard-bilinking-btn{
+
+}
+
+/* Bliking-animation */
+.blinking-button {
+  background-color: #fff;
+  border-color: var(--Sidebar-background-color);
+  color: #000;
+  transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.blinking {
+  animation: blink 1s infinite alternate;
+}
+
+.blinking-button:hover {
+  animation: none; /* Disable the blink animation on hover */
+  transform: scale(1.1);
+  background-color: var(--Sidebar-background-color)  !important;
+  border-color: var(--Sidebar-background-color) !important;
+  color: #fff !important;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    background-color: var(--Sidebar-background-color);
+    border-color: var(--Sidebar-background-color);
+    color: #fff;
+    transform: scale(1.1);
+  }
 }
