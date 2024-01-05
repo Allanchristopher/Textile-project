@@ -113,7 +113,7 @@ function Usermanagement() {
             <Input placeholder="Role" />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" className="Adduser-submit-btn">
+            <Button type="primary" className="Adduser-submit-btn Dashboard-Today-btn Dashboard-Today-btn-active">
               Submit
             </Button>
           </Form.Item>

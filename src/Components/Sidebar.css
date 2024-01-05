@@ -79,3 +79,10 @@ main {
 .link_text {
   font-size: var(--Sidebar-link-icon-text-font-size);
 }
+.Sidebar-logout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+}

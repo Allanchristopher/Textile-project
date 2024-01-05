@@ -10,18 +10,18 @@ import {
   FaShoppingBag,
   FaThList,
 } from "react-icons/fa";
-
+import { TbLogout2 } from "react-icons/tb";
 function Sidebar({ children }) {
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
     {
-      path: "/",
+      path: "/dashboard",
       name: "Dashboard",
       icon: <MdSpaceDashboard />,
     },
     {
-      path: "/Usermanagement",
+      path: "/usermanagement",
       name: "User Management",
       icon: <FaUserAlt />,
     },
@@ -69,7 +69,18 @@ function Sidebar({ children }) {
           </div>
         </div>
         <div className="Bottom_section">
-          <p>Logout</p>
+        <NavLink
+                to={"/"}
+                className="Sidebar-logout"
+              >
+                <div className="icon"><TbLogout2/></div>
+                <div
+                  style={{ display: isOpen ? "block" : "none" }}
+                  className="link_text"
+                >
+                  Logout
+                </div>
+              </NavLink>
         </div>
       </div>
       <main>{children}</main>

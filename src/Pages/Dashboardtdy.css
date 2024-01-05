@@ -53,6 +53,32 @@ flex-basis: 50%;
   display: flex;
 }
 
+.Bill-count-card:hover{
+ position: relative;
+}
+.Bill-count-card:hover .Dashboard-additional-box{
+  display: flex;
+}
+.Available-staff-card:hover{
+  position: relative;
+}
+.Available-staff-card:hover .Dashboard-additional-box{
+  display: flex;
+}
+.Overall-profit-card:hover{
+  position: relative;
+}
+.Overall-profit-card:hover .Dashboard-additional-box{
+  display: flex;
+}
+.Overall-Loss-card:hover{
+  position: relative;
+}
+.Overall-Loss-card:hover .Dashboard-additional-box{
+  display: flex;
+}
+
+
 .Dashboard-additional-box {
   padding: 30px;
   display: none;
