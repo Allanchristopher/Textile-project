@@ -42,14 +42,14 @@
     font-size: var(--Login-heading-size);
     color: var(--Login-heading-color);
 }
-  .ant-input {
+  .Login .ant-input {
     height: 40px;
     font-size: var(--Login-input-font-size) !important;
   }  
   .site-form-item-icon{
     font-size: 18px;
   }
-  .ant-btn {
+ .Login .ant-btn {
     width: 100%;
     height: 40px;
     font-size: var(--Login-input-font-size);

@@ -1,0 +1,36 @@
+.Usermanagement{
+    display: grid;
+    gap: 30px;
+}
+.Adduser-heading{
+    color: var(--Adduser-heading-color);
+    font-size: var(--Adduser-heading-font-size);
+    font-weight: 700;
+}
+.Adduser-inputs-container{
+
+}
+.Adduser-form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.Adduser-form > *{
+    flex-grow: 1;
+    flex-basis: 47.5%;
+
+}
+.Adduser-form > :nth-child(5) {
+    flex-basis: 100%;
+}
+.Adduser-form > :nth-child(6) {
+    /* flex-basis: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Adduser-submit-btn{
+    width: 100px;
+
+}

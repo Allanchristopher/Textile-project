@@ -33,12 +33,16 @@ function Dashboard() {
 
 
         <Button
-      className={`blinking-button ${isHovered ? '' : 'blinking'}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`blinking-button ${!isHovered ? 'blinking' : ''}`}
     >
       Stock alert
     </Button>
+        <Button
+      className={`blinking-button ${!isHovered ? 'blinking' : ''}`}
+    >
+      Payment alert
+    </Button>
+
 
 
 

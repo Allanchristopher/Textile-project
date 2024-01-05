@@ -30,7 +30,8 @@ gap: 30px;
   color: #000 !important;
 }
 .Dashboard-bilinking-btn{
-
+display: flex;
+gap: 30px;
 }
 
 /* Bliking-animation */
