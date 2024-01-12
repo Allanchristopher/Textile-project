@@ -6,6 +6,7 @@ import Login from "./Pages/Login";
 import Sidebar from "./Components/Sidebar";
 import Dashboad from "./Pages/Dashboad";
 import Usermanagement from "./Pages/Usermanagement";
+import Addproducts from "./Pages/Addproducts";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Routes>
                   <Route path="/dashboard" element={<Dashboad />} />
                   <Route path="/usermanagement" element={<Usermanagement />} />
+                  <Route path="/Addproducts" element={<Addproducts />} />
                 </Routes>
               </Sidebar>
             }

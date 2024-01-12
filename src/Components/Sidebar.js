@@ -2,15 +2,9 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
 import { MdSpaceDashboard } from "react-icons/md";
-import {
-  FaBars,
-  FaUserAlt,
-  FaRegChartBar,
-  FaCommentAlt,
-  FaShoppingBag,
-  FaThList,
-} from "react-icons/fa";
+import { FaBars, FaUserAlt } from "react-icons/fa";
 import { TbLogout2 } from "react-icons/tb";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 function Sidebar({ children }) {
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
@@ -24,6 +18,11 @@ function Sidebar({ children }) {
       path: "/usermanagement",
       name: "User Management",
       icon: <FaUserAlt />,
+    },
+    {
+      path: "/Addproducts",
+      name: "Add Products",
+      icon: <AiOutlineShoppingCart />,
     },
   ];
   return (
@@ -69,18 +68,17 @@ function Sidebar({ children }) {
           </div>
         </div>
         <div className="Bottom_section">
-        <NavLink
-                to={"/"}
-                className="Sidebar-logout"
-              >
-                <div className="icon"><TbLogout2/></div>
-                <div
-                  style={{ display: isOpen ? "block" : "none" }}
-                  className="link_text"
-                >
-                  Logout
-                </div>
-              </NavLink>
+          <NavLink to={"/"} className="Sidebar-logout">
+            <div className="icon">
+              <TbLogout2 />
+            </div>
+            <div
+              style={{ display: isOpen ? "block" : "none" }}
+              className="link_text"
+            >
+              Logout
+            </div>
+          </NavLink>
         </div>
       </div>
       <main>{children}</main>

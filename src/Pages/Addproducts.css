@@ -1,0 +1,38 @@
+.Addproducts{
+    display: grid;
+    gap: 30px;
+}
+.Addproducts-heading{
+    color: var(--Adduser-heading-color);
+    font-size: var(--Adduser-heading-font-size);
+    font-weight: 700;
+}
+.Add-product-inputs{
+    
+}
+.Addproduct-form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.Addproduct-form > *{
+    flex-grow: 1;
+    flex-basis: 47.5%;
+
+}
+.Add-multi-product-container{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.Addproduct-submit-btn{
+    width: 100px;
+}
+.Addproduct-form > :nth-child(17) {
+    /* flex-basis: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
