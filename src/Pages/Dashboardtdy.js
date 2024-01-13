@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Dashboardtdy.css";
 import { Bar } from "react-chartjs-2";
-import { Table } from "antd";
+import { Table, notification ,DatePicker} from "antd";
+import { IoIosMan } from "react-icons/io";
+import { GiReceiveMoney } from "react-icons/gi";
+import { FaPeopleCarryBox } from "react-icons/fa6";
+import { FaMoneyBill } from "react-icons/fa";
+import { GiPayMoney } from "react-icons/gi";
+import { RiBillFill } from "react-icons/ri";
+
 function Dashboardtdy() {
+  useEffect(() => {
+    // Display a notification when the page loads
+    notification.open({
+      message: (
+        <p className="notificaton-heading">
+          Stock Alert
+        </p>
+      ),
+      description: (
+        <p className="notificaton-value">
+          20
+        </p>
+      ),
+    });
+    notification.open({
+      message: (
+        <p className="notificaton-heading">
+          Payment Alert
+        </p>
+      ),
+      description: (
+        <p className="notificaton-value">
+          200 
+        </p>
+      ),
+    });
+  }, []);
+  const { RangePicker } = DatePicker;
   let labels = [
     "Monday",
     "Tuesday",
@@ -235,14 +270,29 @@ function Dashboardtdy() {
     <div className="Dashboardtdy">
       <div className="Dashboard-card-container">
         <div className="Dashboard-card">
-          <p className="Dashboard-card-value">
-            <span>&#8377;</span>10000
-          </p>
-          <p className="Dashboard-card-heading">Earnings</p>
+          <div className="first-divider">
+            <p className="Dashboard-card-heading">Earnings</p>
+            <p className="Dashboard-card-value">
+              <span>&#8377;</span>10000
+            </p>
+          </div>
+          <div className="second-divider">
+            <div className="icon-container">
+              <GiReceiveMoney />
+            </div>
+          </div>
         </div>
         <div className="Dashboard-card sales-count-card">
-          <p className="Dashboard-card-value">248</p>
-          <p className="Dashboard-card-heading">Sales count</p>
+          <div className="first-divider">
+            <p className="Dashboard-card-heading">Sales count</p>
+            <p className="Dashboard-card-value">248</p>
+          </div>
+          <div className="second-divider">
+            <div className="icon-container">
+              <FaPeopleCarryBox />
+            </div>
+          </div>
+
           <div className="Dashboard-additional-box">
             {/* <p className="Dashboard-additional-box-heading">
               Shirt : <span className="Dashboard-additional-box-count">20</span>
@@ -264,29 +314,60 @@ function Dashboardtdy() {
           </div>
         </div>
         <div className="Dashboard-card Available-staff-card">
-          <p className="Dashboard-card-value">24</p>
-          <p className="Dashboard-card-heading">Available staff</p>
+          <div className="first-divider">
+            <p className="Dashboard-card-heading">Available staff</p>
+            <p className="Dashboard-card-value">24</p>
+          </div>
+          <div className="second-divider">
+            <div className="icon-container">
+              <IoIosMan />
+            </div>
+          </div>
+
           <div className="Dashboard-additional-box">
             <Table dataSource={staffdataSource} columns={staffcolumns} />
           </div>
         </div>
         <div className="Dashboard-card Overall-profit-card">
-          <p className="Dashboard-card-value">2000</p>
-          <p className="Dashboard-card-heading">Overall profit</p>
+          <div className="first-divider">
+            <p className="Dashboard-card-heading">Overall profit</p>
+            <p className="Dashboard-card-value">2000</p>
+          </div>
+          <div className="second-divider">
+            <div className="icon-container">
+              <FaMoneyBill />
+            </div>
+          </div>
           <div className="Dashboard-additional-box">
             <Table dataSource={profitdataSource} columns={profitcolumns} />
           </div>
         </div>
         <div className="Dashboard-card Overall-Loss-card">
-          <p className="Dashboard-card-value">1000</p>
-          <p className="Dashboard-card-heading">Overall Loss</p>
+          <div className="first-divider">
+            <p className="Dashboard-card-heading">Overall Loss</p>
+            <p className="Dashboard-card-value">1000</p>
+          </div>
+          <div className="second-divider">
+            <div className="icon-container">
+              <GiPayMoney />
+            </div>
+          </div>
+
           <div className="Dashboard-additional-box">
             <Table dataSource={lossdataSource} columns={losscolumns} />
           </div>
         </div>
         <div className="Dashboard-card Bill-count-card">
-          <p className="Dashboard-card-value">200</p>
+          <div className="first-divider">
           <p className="Dashboard-card-heading">Overall Bill Count</p>
+            <p className="Dashboard-card-value">200</p>
+          </div>
+          <div className="second-divider">
+            <div className="icon-container">
+              <RiBillFill />
+            </div>
+          </div>
+
           <div className="Dashboard-additional-box">
             {/* <p className="Dashboard-additional-box-heading">
               Shirt : <span className="Dashboard-additional-box-count">20</span>
@@ -308,7 +389,14 @@ function Dashboardtdy() {
           </div>
         </div>
       </div>
-
+<div className="Dashboardtdy-btn-container">
+<RangePicker />
+<button className="Dashboardtdy-graph-btn">Earnings</button>
+<button className="Dashboardtdy-graph-btn">Sales count</button>
+<button className="Dashboardtdy-graph-btn">Overall profit</button>
+<button className="Dashboardtdy-graph-btn">Overall Loss</button>
+<button className="Dashboardtdy-graph-btn">Overall Bill Count</button>
+</div>
       <div className="chart-container">
         <div className="chart-container-1 chart-container-same">
           <Bar data={data} options={options} />

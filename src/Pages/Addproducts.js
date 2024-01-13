@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Addproducts.css";
 import { Form, Input, Select, DatePicker, Button, Table } from "antd";
 import csv from "../Assests/sample.csv";
@@ -6,8 +6,12 @@ import csv from "../Assests/sample.csv";
 function Addproducts() {
   const [form] = Form.useForm();
   const { Option } = Select;
+  const [fontSize, setFontSize] = useState("default");
   const onFinish = async (values) => {
     console.log("Form values:", values);
+  };
+  const handleButtonClick = (value) => {
+    setFontSize(value);
   };
   return (
     <div className="Addproducts">
@@ -19,14 +23,21 @@ function Addproducts() {
             name="group"
             rules={[{ required: true, message: "Please enter a group" }]}
           >
-            <Input />
+            <Select mode="multiple" placeholder="select group">
+              <Option value="Dashboard">Ready made</Option>
+              <Option value="User Management">Inner</Option>
+              <Option value="Rider Management">Saree</Option>
+            </Select>
           </Form.Item>
           <Form.Item
             label="Vendor Name"
             name="vendorname"
             rules={[{ required: true, message: "Please enter a vendor name" }]}
           >
-            <Input />
+            <Select mode="multiple" placeholder="select Vendor Name">
+              <Option value="Dashboard">Dani</Option>
+              <Option value="User Management">Kumar</Option>
+            </Select>
           </Form.Item>
           <Form.Item
             label="Product Name"
@@ -91,7 +102,13 @@ function Addproducts() {
             name="size"
             rules={[{ required: true, message: "Please enter a Size" }]}
           >
-            <Input />
+            <Select mode="multiple" placeholder="select Size">
+              <Option value="Dashboard">23</Option>
+              <Option value="User Management">32</Option>
+              <Option value="Dashboard">45</Option>
+              <Option value="User Management">54</Option>
+              <Option value="Dashboard">54</Option>
+            </Select>
           </Form.Item>
           <Form.Item
             label="Design type"
@@ -149,43 +166,83 @@ function Addproducts() {
             </Form.Item>
           </div>
           <Form.Item
-            // label="Calculator"
-            // name="calculator"
-            // rules={[{ required: true, message: "Please enter a calculator" }]}
             style={{
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <h2>QR code</h2>
+            <h2
+              style={{
+                fontSize: `${
+                  fontSize === "small"
+                    ? "16px"
+                    : fontSize === "large"
+                    ? "24px"
+                    : "20px"
+                }`,
+              }}
+            >
+              QR code
+            </h2>
+
+            <div style={{ marginTop: "10px" }}>
+              <Button value="small" onClick={() => handleButtonClick("small")}>
+                Small
+              </Button>
+              <Button
+                value="default"
+                onClick={() => handleButtonClick("default")}
+              >
+                Default
+              </Button>
+              <Button value="large" onClick={() => handleButtonClick("large")}>
+                Large
+              </Button>
+            </div>
+          </Form.Item>
+          <Form.Item
+            label="Sub code"
+            name="subcode"
+            rules={[{ required: true, message: "Please enter a subcode" }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Design No"
+            name="Designno"
+            rules={[{ required: true, message: "Please enter a Design No" }]}
+          >
+            <Input />
           </Form.Item>
           <Form.Item>
-          <Button type="primary" className="Addproduct-submit-btn Dashboard-Today-btn Dashboard-Today-btn-active">
-            Submit
-          </Button>
+            <Button
+              type="primary"
+              className="Addproduct-submit-btn Dashboard-Today-btn Dashboard-Today-btn-active"
+            >
+              Submit
+            </Button>
           </Form.Item>
         </Form>
       </div>
-<p className="Addproducts-heading">Add Multiple products</p>
-<div className="Add-multi-product-container">
-          <Button
-            className={`blinking-button blinking`}
-            href={csv} download={csv}
-            // onClick={() => handletableclick("Stockalert")}
-          >
-            Download Template 
-          </Button>
-          <Button
-            className={`blinking-button blinking`}
-            // onClick={() => handletableclick("Paymentalert")}
-          >
-            Upload Products
-          </Button>
-        
-</div>
-
-
+      <p className="Addproducts-heading">Add Multiple products</p>
+      <div className="Add-multi-product-container">
+        <Button
+          className={`blinking-button blinking`}
+          href={csv}
+          download={csv}
+          // onClick={() => handletableclick("Stockalert")}
+        >
+          Download Template
+        </Button>
+        <Button
+          className={`blinking-button blinking`}
+          // onClick={() => handletableclick("Paymentalert")}
+        >
+          Upload Products
+        </Button>
+      </div>
     </div>
   );
 }

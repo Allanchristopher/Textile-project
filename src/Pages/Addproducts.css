@@ -30,7 +30,7 @@
 .Addproduct-submit-btn{
     width: 100px;
 }
-.Addproduct-form > :nth-child(17) {
+.Addproduct-form > :nth-child(19) {
     /* flex-basis: 100%; */
     display: flex;
     align-items: center;

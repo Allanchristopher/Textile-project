@@ -26,9 +26,8 @@ flex-basis: 50%;
   border-radius: 15px;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .Dashboard-card:hover {
   /* transform: scale(1.01); */
@@ -131,4 +130,31 @@ flex-basis: 50%;
 }
 .chart-container-1{
 
+}
+
+.icon-container{
+  padding:5px;
+  background-color: var(--Sidebar-background-color);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 26px;
+}
+.notificaton-heading{
+  font-size: 20px;
+  color: var(--Sidebar-background-color);
+  font-weight: 500;
+}
+.notificaton-value{
+  font-size: 22px;
+}
+.Dashboardtdy-btn-container{
+  display: flex;
+  gap: 10px;
+}
+.Dashboardtdy-graph-btn{
+  padding: 8px;
+  border: none;
+  background-color: var(--Sidebar-background-color);
+  color: #fff;
+  border-radius: 4px;
 }
